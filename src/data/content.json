@@ -1,0 +1,84 @@
+{
+  "site": {
+    "title": "Fastorial - Fast-Paced Tech Tutorials",
+    "description": "Your destination for fast-paced, insightful tutorials on tech, coding & software engineering. Learn from industry expert Anu Shibin.",
+    "keywords": "software engineering, coding tutorials, tech education, programming, web development, fastorial",
+    "author": "Anu Shibin",
+    "url": "https://fastorial.com"
+  },
+  "hero": {
+    "title": "Master Software Engineering",
+    "subtitle": "Fast.",
+    "description": "Bite-sized, practical tutorials that accelerate your growth in tech. From fundamentals to advanced topics.",
+    "cta": {
+      "primary": "Level up now",
+      "secondary": "Join Community"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "name": "Anu Shibin",
+    "role": "Lead Software Engineer & Creator of Fastorial",
+    "bio": "With years of experience in building scalable systems and mentoring developers, I founded this channel to share bite-sized, practical lessons that help you accelerate your growth in software engineering.",
+    "linkedIn": "https://www.linkedin.com/in/anushibinj/"
+  },
+  "playlists": [
+    {
+      "id": 1,
+      "title": "Beginner Tutorials",
+      "description": "Start your journey with foundational concepts",
+      "url": "https://www.youtube.com/@fastorial/playlists",
+      "level": "Beginner",
+      "thumbnail": "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "id": 2,
+      "title": "Advanced Topics",
+      "description": "Deep dive into complex engineering challenges",
+      "url": "https://www.youtube.com/@fastorial/playlists",
+      "level": "Advanced",
+      "thumbnail": "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "id": 3,
+      "title": "Quick Tips & Tricks",
+      "description": "Productivity hacks and best practices",
+      "url": "https://www.youtube.com/@fastorial/playlists",
+      "level": "All Levels",
+      "thumbnail": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "Deep Dive into XYZ",
+      "description": "Comprehensive course covering advanced concepts",
+      "status": "Coming Soon",
+      "startDate": "TBD"
+    }
+  ],
+  "social": {
+    "youtube": "https://www.youtube.com/@fastorial",
+    "linkedIn": "https://www.linkedin.com/in/anushibinj/",
+    "discord": "#",
+    "whatsapp": "#"
+  },
+  "stats": [
+    {
+      "value": "10K+",
+      "label": "Students Taught"
+    },
+    {
+      "value": "50+",
+      "label": "Video Tutorials"
+    },
+    {
+      "value": "5K+",
+      "label": "Community Members"
+    },
+    {
+      "value": "100%",
+      "label": "Free Content"
+    }
+  ]
+}
