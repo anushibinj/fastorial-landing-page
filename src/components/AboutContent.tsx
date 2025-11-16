@@ -7,6 +7,7 @@ interface AboutContentProps {
     role: string;
     bio: string;
     linkedIn: string;
+    profilePic: string;
   };
 }
 
@@ -24,7 +25,11 @@ export default function AboutContent({ data }: AboutContentProps) {
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="flex-shrink-0">
             <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center text-white text-5xl lg:text-6xl font-bold shadow-lg">
-              {data.name.split(' ').map(n => n[0]).join('')}
+              <img
+                src={data.profilePic}
+                alt={data.name}
+                className="w-32 h-32 lg:w-40 lg:h-40 rounded-full object-cover"
+              />
             </div>
           </div>
 
@@ -35,9 +40,7 @@ export default function AboutContent({ data }: AboutContentProps) {
             <p className="text-lg text-blue-600 font-semibold mb-4">
               {data.role}
             </p>
-            <p className="text-slate-700 text-lg leading-relaxed mb-6">
-              {data.bio}
-            </p>
+            <p className="text-slate-700 text-lg leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: data.bio }} />
             <a
               href={data.linkedIn}
               target="_blank"
@@ -45,7 +48,7 @@ export default function AboutContent({ data }: AboutContentProps) {
               className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
             >
               <Linkedin className="w-5 h-5" />
-              Connect on LinkedIn
+              Connect with me on LinkedIn
             </a>
           </div>
         </div>
