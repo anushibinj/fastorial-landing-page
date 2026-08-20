@@ -1,0 +1,101 @@
+import { useState } from 'react';
+import { Menu } from 'lucide-react';
+
+import { Button } from '@/components/ui/button';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
+import { content } from '@/lib/content';
+
+const navItems = [
+  { label: 'Playlists', id: 'playlists' },
+  { label: 'Courses', id: 'courses' },
+  { label: 'About', id: 'about' },
+  { label: 'Community', id: 'community' },
+];
+
+function scrollToId(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+
+export function SiteHeader() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="sticky top-0 z-40 h-12 border-b border-white/10 bg-[#1d1d1f]/80 text-white backdrop-blur-xl">
+      <div className="mx-auto flex h-full max-w-[980px] items-center justify-between px-4 md:px-6">
+        <a
+          href="#top"
+          className="text-[19px] font-semibold tracking-[-0.03em] text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
+        >
+          Fastorial
+        </a>
+
+        <nav className="hidden items-center md:flex" aria-label="Primary">
+          {navItems.map((item) => (
+            <Button
+              key={item.id}
+              type="button"
+              variant="nav"
+              size="nav"
+              onClick={() => scrollToId(item.id)}
+            >
+              {item.label}
+            </Button>
+          ))}
+          <Button variant="nav" size="nav" asChild>
+            <a href={content.social.youtube} target="_blank" rel="noopener noreferrer">
+              YouTube
+            </a>
+          </Button>
+        </nav>
+
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-white hover:bg-white/10 md:hidden"
+              aria-label="Open menu"
+            >
+              <Menu className="h-5 w-5" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent>
+            <SheetTitle className="sr-only">Menu</SheetTitle>
+            <SheetDescription className="sr-only">Site sections</SheetDescription>
+            <nav className="flex flex-col gap-1" aria-label="Mobile">
+              {navItems.map((item) => (
+                <Button
+                  key={item.id}
+                  type="button"
+                  variant="ghost"
+                  className="h-12 justify-start rounded-lg px-3 text-[28px] font-semibold tracking-[-0.02em] text-white hover:bg-white/10"
+                  onClick={() => {
+                    setOpen(false);
+                    scrollToId(item.id);
+                  }}
+                >
+                  {item.label}
+                </Button>
+              ))}
+              <Button
+                variant="ghost"
+                className="h-12 justify-start rounded-lg px-3 text-[28px] font-semibold tracking-[-0.02em] text-white hover:bg-white/10"
+                asChild
+              >
+                <a href={content.social.youtube} target="_blank" rel="noopener noreferrer">
+                  YouTube
+                </a>
+              </Button>
+            </nav>
+          </SheetContent>
+        </Sheet>
+      </div>
+    </header>
+  );
+}

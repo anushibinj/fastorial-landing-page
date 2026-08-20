@@ -65,7 +65,7 @@
 			"startDate": "TBD"
 		},
 		{
-			"id": 2,
+			"id": 3,
 			"title": "System Design Masterclass",
 			"description": "Master essential system design to build scalable and high-performance applications.",
 			"status": "Not started",
@@ -75,7 +75,7 @@
 	"social": {
 		"youtube": "https://www.youtube.com/@fastorial",
 		"linkedIn": "https://www.linkedin.com/in/anushibinj/",
-		"discord": "discord.gg/6quJe2MDGm",
+		"discord": "https://discord.gg/6quJe2MDGm",
 		"whatsapp": "https://chat.whatsapp.com/HZeQmatwujD2TucAenPHfI",
 		"telegram": "https://t.me/fastorial"
 	},
