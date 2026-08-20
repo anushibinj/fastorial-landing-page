@@ -46,12 +46,12 @@ Single-page Vite + React marketing site, deployed on Firebase Hosting. Content l
 Confirmed in `src/data/content.json`:
 
 - Hero copy, about bio, profile photo URL, LinkedIn
-- Three YouTube playlists with thumbnails and levels
+- Three YouTube playlists (URL and level). Artwork is the official playlist embed, not a stored thumbnail.
 - Three courses with status and dates
 - Social: YouTube, LinkedIn, Discord, WhatsApp, Telegram
 - Stats: 10K+ students, 50+ tutorials, 5K+ community, 100% free — use only as supplied; do not inflate
 
-No customer quotes, press, or original product photography beyond playlist thumbnails and the profile photo.
+No customer quotes, press, or hosted playlist artwork. Profile photo is an external URL.
 
 ## Product Principles
 

@@ -29,24 +29,21 @@
 			"title": "Multithreading in Java",
 			"description": "Learn multithreading concepts with practical examples in this 5-part series.",
 			"url": "https://www.youtube.com/playlist?list=PLFsDocJcusVxL0jteBo4kDFqlZSkaLcTW",
-			"level": "All Levels",
-			"thumbnail": "https://i.ytimg.com/vi/gJ62S9ic5j4/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAqKvkyYrIdUsg6mAnca8TRig5cug"
+			"level": "All Levels"
 		},
 		{
 			"id": 2,
 			"title": "Java Streams API",
 			"description": "Learn the Java Streams API in a chill coding and learning session with me",
 			"url": "https://www.youtube.com/playlist?list=PLFsDocJcusVwkBUcfRdoMQLuc2wzDPny8",
-			"level": "Advanced",
-			"thumbnail": "https://i.ytimg.com/vi/jHJ79FRhycM/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCGcdToHbI7jzrq_e6FPwn4k6JLqQ"
+			"level": "Advanced"
 		},
 		{
 			"id": 3,
 			"title": "Spring Boot + React JS | Task Tracker Project",
 			"description": "Build a full-stack Task Tracker application using Spring Boot for the backend and React JS for the frontend. Deploy it to the cloud using Docker and Google Cloud Run.",
 			"url": "https://www.youtube.com/playlist?list=PLFsDocJcusVzPsrq1VujwvUQhVRs82OED",
-			"level": "All Levels",
-			"thumbnail": "https://i.ytimg.com/vi/BT1Er3ejLqM/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCC4Zr4oGL7bwsbPER72343MCw_bg"
+			"level": "All Levels"
 		}
 	],
 	"courses": [

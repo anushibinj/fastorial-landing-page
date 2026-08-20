@@ -6,7 +6,6 @@ export type Playlist = {
   description: string;
   url: string;
   level: string;
-  thumbnail: string;
 };
 
 export type Course = {

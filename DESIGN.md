@@ -154,7 +154,8 @@ Built on shadcn/ui (Button, Card, Separator, Avatar, Sheet) restyled to this sys
 - **On-ink button:** white fill, ink type, used on the community band.
 - **Text link:** link blue plus a ›. External links open in a new tab.
 - **Card:** mist fill, 18px, no border, no shadow. Used for secondary playlists.
-- **Featured tile:** ink panel, type left, thumbnail right on desktop; stacked on small screens.
+- **Featured tile:** ink panel, type left, YouTube playlist embed right on desktop; stacked on small screens.
+- **Playlist cards:** 16:9 YouTube playlist embed, then title and copy. Thumbnails come from YouTube, not from this repo.
 - **Sheet:** full-width ink drawer from the top for mobile nav.
 - **Separator:** 1px hairline between courses.
 
@@ -162,11 +163,11 @@ Built on shadcn/ui (Button, Card, Separator, Avatar, Sheet) restyled to this sys
 
 ### Do
 - Keep the page mostly paper and mist.
-- Let playlist artwork stay photographic; do not invent illustrations.
+- Let playlist artwork come from the YouTube embed. Do not host or hardcode thumbnails.
 - Use supplied stats as a quiet line, never as a hero metric row.
 
 ### Don't
 - Don't bring back gradient hero blobs, glass cards, or side-stripe accents.
 - Don't add eyebrows or numbered section markers.
 - Don't introduce a second accent color.
-- Don't blow a YouTube thumbnail across the full first viewport; keep it inside a tile.
+- Don't blow a YouTube thumbnail across the full first viewport; keep the embed inside a tile.
