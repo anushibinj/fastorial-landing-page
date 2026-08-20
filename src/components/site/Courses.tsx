@@ -3,13 +3,13 @@ import { content } from '@/lib/content';
 
 export function Courses() {
   return (
-    <section id="courses" className="bg-secondary py-24 md:py-32">
+    <section id="courses" className="scroll-mt-12 bg-secondary py-24 md:py-32">
       <div className="mx-auto max-w-[980px] px-6">
         <h2 className="text-center text-[32px] font-semibold tracking-[-0.025em] text-foreground md:text-[48px]">
           Upcoming courses.
         </h2>
         <p className="mx-auto mt-4 max-w-[40ch] text-center text-[19px] leading-relaxed text-muted-foreground">
-          What is being recorded next. Nothing here is a waitlist or a paid funnel.
+          What is being recorded next.
         </p>
 
         <ul className="mx-auto mt-16 max-w-[720px]">

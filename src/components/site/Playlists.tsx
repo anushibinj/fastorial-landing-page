@@ -1,36 +1,37 @@
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { content } from '@/lib/content';
 
 export function Playlists() {
   const [featured, ...rest] = content.playlists;
 
   return (
-    <section id="playlists" className="bg-background pb-24 md:pb-32">
+    <section id="playlists" className="scroll-mt-12 bg-background pb-24 md:pb-32">
       <div className="mx-auto max-w-[980px] px-6">
         {featured && (
           <a
             href={featured.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group block overflow-hidden rounded-[18px] bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="group grid overflow-hidden rounded-[18px] bg-foreground text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:grid-cols-[1.1fr_0.9fr]"
           >
-            <img
-              src={featured.thumbnail}
-              alt=""
-              className="aspect-[16/9] w-full object-cover"
-            />
-            <div className="px-8 py-8 text-left md:px-12 md:py-10">
-              <p className="text-[12px] text-muted-foreground">{featured.level}</p>
-              <h2 className="mt-2 text-[28px] font-semibold tracking-[-0.02em] text-foreground md:text-[40px]">
+            <div className="flex flex-col justify-center px-8 py-12 text-left md:px-14 md:py-16">
+              <p className="text-[12px] text-white/55">{featured.level}</p>
+              <h2 className="mt-3 text-[32px] font-semibold leading-[1.1] tracking-[-0.03em] md:text-[40px]">
                 {featured.title}
               </h2>
-              <p className="mt-3 max-w-[52ch] text-[17px] leading-relaxed text-muted-foreground">
+              <p className="mt-4 max-w-[36ch] text-[17px] leading-relaxed text-white/70">
                 {featured.description}
               </p>
-              <span className="mt-5 inline-flex text-[17px] text-primary group-hover:underline">
+              <span className="mt-6 inline-flex text-[17px] text-primary group-hover:underline">
                 Watch playlist ›
               </span>
+            </div>
+            <div className="relative min-h-[220px] bg-[#000]">
+              <img
+                src={featured.thumbnail}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover opacity-90"
+              />
             </div>
           </a>
         )}
@@ -57,20 +58,16 @@ export function Playlists() {
                       alt=""
                       className="aspect-[16/9] w-full object-cover"
                     />
-                    <CardHeader>
-                      <Badge variant="secondary" className="w-fit bg-background">
-                        {playlist.level}
-                      </Badge>
-                      <CardTitle className="text-[24px] md:text-[28px]">{playlist.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-1">
-                      <p className="text-[17px] leading-relaxed text-muted-foreground">
+                    <CardContent className="flex flex-1 flex-col px-8 pb-8 pt-7">
+                      <p className="text-[12px] text-muted-foreground">{playlist.level}</p>
+                      <h3 className="mt-2 text-[24px] font-semibold tracking-[-0.02em] md:text-[28px]">
+                        {playlist.title}
+                      </h3>
+                      <p className="mt-3 flex-1 text-[17px] leading-relaxed text-muted-foreground">
                         {playlist.description}
                       </p>
+                      <span className="mt-5 text-[17px] text-primary">Watch playlist ›</span>
                     </CardContent>
-                    <CardFooter>
-                      <span className="text-[17px] text-primary">Watch playlist ›</span>
-                    </CardFooter>
                   </a>
                 </Card>
               ))}

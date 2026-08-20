@@ -26,11 +26,11 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 h-12 border-b border-white/10 bg-[#1d1d1f]/80 text-white backdrop-blur-xl">
-      <div className="mx-auto flex h-full max-w-[980px] items-center justify-between px-4 md:px-6">
+    <header className="sticky top-0 z-40 h-12 border-b border-white/[0.18] bg-[#1d1d1f]/80 text-white backdrop-blur-[20px]">
+      <div className="mx-auto grid h-full max-w-[980px] grid-cols-[1fr_auto] items-center px-4 md:grid-cols-[1fr_auto_1fr] md:px-6">
         <a
           href="#top"
-          className="text-[19px] font-semibold tracking-[-0.03em] text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
+          className="justify-self-start text-[19px] font-semibold tracking-[-0.03em] text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
         >
           Fastorial
         </a>
@@ -47,19 +47,22 @@ export function SiteHeader() {
               {item.label}
             </Button>
           ))}
+        </nav>
+
+        <div className="hidden justify-self-end md:block">
           <Button variant="nav" size="nav" asChild>
             <a href={content.social.youtube} target="_blank" rel="noopener noreferrer">
               YouTube
             </a>
           </Button>
-        </nav>
+        </div>
 
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
             <Button
               variant="ghost"
               size="icon"
-              className="text-white hover:bg-white/10 md:hidden"
+              className="h-11 w-11 justify-self-end text-white hover:bg-white/10 md:hidden"
               aria-label="Open menu"
             >
               <Menu className="h-5 w-5" />

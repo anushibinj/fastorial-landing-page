@@ -11,7 +11,7 @@ export function About() {
     .join('');
 
   return (
-    <section id="about" className="bg-background py-24 md:py-32">
+    <section id="about" className="scroll-mt-12 bg-background py-24 md:py-32">
       <div className="mx-auto grid max-w-[980px] items-center gap-12 px-6 md:grid-cols-[minmax(0,280px)_1fr] md:gap-20">
         <Avatar className="mx-auto h-[220px] w-[220px] md:h-[280px] md:w-[280px]">
           <AvatarImage src={content.about.profilePic} alt={content.about.name} />
