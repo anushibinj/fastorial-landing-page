@@ -5,6 +5,7 @@ import { externalHref } from '@/lib/utils';
 
 const platforms = [
   { name: 'YouTube', href: content.social.youtube },
+  { name: 'Twitch', href: content.social.twitch },
   { name: 'Discord', href: content.social.discord },
   { name: 'WhatsApp', href: content.social.whatsapp },
   { name: 'Telegram', href: content.social.telegram },

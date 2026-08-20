@@ -16,6 +16,13 @@ export type Course = {
   startDate: string;
 };
 
+export type LiveProject = {
+  name: string;
+  status: string;
+  description?: string;
+  url?: string;
+};
+
 export type Stat = {
   value: string;
   label: string;
@@ -47,6 +54,11 @@ export type SiteContent = {
     linkedIn: string;
   };
   playlists: Playlist[];
+  projects: {
+    current: LiveProject & { url: string };
+    past: Array<LiveProject & { url: string }>;
+    upcoming: LiveProject[];
+  };
   courses: Course[];
   social: {
     youtube: string;
@@ -54,6 +66,7 @@ export type SiteContent = {
     discord: string;
     whatsapp: string;
     telegram: string;
+    twitch: string;
   };
   stats: Stat[];
 };

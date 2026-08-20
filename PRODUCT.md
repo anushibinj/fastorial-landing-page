@@ -14,7 +14,7 @@ People learning software engineering who want short, practical tutorials rather 
 
 ## Product Purpose
 
-Fastorial is a marketing landing page for Anu Shibin Joseph Raj’s tech education channel. It should make a first-time visitor understand the offer (fast-paced software engineering tutorials), see current playlists and upcoming courses, and subscribe or join the community.
+Fastorial is a marketing landing page for Anu Shibin Joseph Raj’s tech education channel. It should make a first-time visitor understand the offer (fast-paced software engineering tutorials and daily live-coded projects), see current playlists, live work, and upcoming courses, and subscribe or join the community.
 
 Success is a visitor who watches a playlist or joins a community channel without hunting.
 
@@ -47,8 +47,9 @@ Confirmed in `src/data/content.json`:
 
 - Hero copy, about bio, profile photo URL, LinkedIn
 - Three YouTube playlists (URL and level). Artwork is the official playlist embed, not a stored thumbnail.
+- Live projects: current and past playlists, plus upcoming product names and descriptions
 - Three courses with status and dates
-- Social: YouTube, LinkedIn, Discord, WhatsApp, Telegram
+- Social: YouTube, Twitch, LinkedIn, Discord, WhatsApp, Telegram
 - Stats: 10K+ students, 50+ tutorials, 5K+ community, 100% free — use only as supplied; do not inflate
 
 No customer quotes, press, or hosted playlist artwork. Profile photo is an external URL.

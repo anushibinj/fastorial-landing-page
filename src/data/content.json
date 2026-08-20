@@ -20,7 +20,7 @@
 		"name": "Anu Shibin Joseph Raj",
 		"profilePic": "https://raw.githubusercontent.com/fastorial/anushibinj/refs/heads/main/public/img/anu-shibin-profile-pic.jpeg",
 		"role": "Lead Software Engineer & Creator of Fastorial",
-		"bio": "With more than 9 years of experience in building scalable systems and mentoring developers, I founded this channel to share bite-sized, practical lessons that help you accelerate your growth in software engineering.</br></br>Have questions about your career or tech concepts?",
+		"bio": "With more than 10 years of experience in building scalable systems and mentoring developers, I founded this channel to share bite-sized, practical lessons that help you accelerate your growth in software engineering.</br></br>Have questions about your career or tech concepts?",
 		"linkedIn": "https://www.linkedin.com/in/anushibinj/"
 	},
 	"playlists": [
@@ -46,6 +46,44 @@
 			"level": "All Levels"
 		}
 	],
+	"projects": {
+		"current": {
+			"name": "Project PostInTime",
+			"status": "Current",
+			"description": "Live every day.",
+			"url": "https://www.youtube.com/playlist?list=PLVFaD7RpWAbE"
+		},
+		"past": [
+			{
+				"name": "Project Heimdall",
+				"status": "Past",
+				"description": "A completed live-streamed build.",
+				"url": "https://www.youtube.com/playlist?list=PLeunN8x8zzcE"
+			}
+		],
+		"upcoming": [
+			{
+				"name": "saveas",
+				"status": "Upcoming",
+				"description": "Save any link (file) to any cloud service."
+			},
+			{
+				"name": "cacher",
+				"status": "Upcoming",
+				"description": "Cache any HTTP request to local storage for fast retrieval later."
+			},
+			{
+				"name": "sellez",
+				"status": "Upcoming",
+				"description": "OLX for corporates."
+			},
+			{
+				"name": "skillamp",
+				"status": "Upcoming",
+				"description": "Study now. Forget never."
+			}
+		]
+	},
 	"courses": [
 		{
 			"id": 1,
@@ -74,7 +112,8 @@
 		"linkedIn": "https://www.linkedin.com/in/anushibinj/",
 		"discord": "https://discord.gg/6quJe2MDGm",
 		"whatsapp": "https://chat.whatsapp.com/HZeQmatwujD2TucAenPHfI",
-		"telegram": "https://t.me/fastorial"
+		"telegram": "https://t.me/fastorial",
+		"twitch": "https://www.twitch.tv/fastorial"
 	},
 	"stats": [
 		{

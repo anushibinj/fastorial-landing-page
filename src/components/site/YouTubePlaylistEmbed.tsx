@@ -4,14 +4,14 @@ type YouTubePlaylistEmbedProps = {
   url: string;
   title: string;
   className?: string;
-  iframeClassName?: string;
+  fit?: 'fill' | 'cover';
 };
 
 export function YouTubePlaylistEmbed({
   url,
   title,
   className,
-  iframeClassName,
+  fit = 'fill',
 }: YouTubePlaylistEmbedProps) {
   const listId = playlistIdFromUrl(url);
 
@@ -29,7 +29,7 @@ export function YouTubePlaylistEmbed({
   }
 
   return (
-    <div className={cn('overflow-hidden bg-black', className)}>
+    <div className={cn('relative overflow-hidden bg-black', className)}>
       <iframe
         src={`https://www.youtube-nocookie.com/embed/videoseries?list=${encodeURIComponent(listId)}`}
         title={title}
@@ -37,7 +37,12 @@ export function YouTubePlaylistEmbed({
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
         referrerPolicy="strict-origin-when-cross-origin"
-        className={cn('h-full w-full border-0', iframeClassName)}
+        className={cn(
+          'border-0',
+          fit === 'cover'
+            ? 'absolute left-1/2 top-1/2 aspect-video h-auto min-h-full w-auto min-w-full max-w-none -translate-x-1/2 -translate-y-1/2'
+            : 'absolute inset-0 h-full w-full',
+        )}
       />
     </div>
   );

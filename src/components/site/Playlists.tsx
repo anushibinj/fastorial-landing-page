@@ -30,8 +30,8 @@ export function Playlists() {
             <YouTubePlaylistEmbed
               url={featured.url}
               title={featured.title}
-              className="relative min-h-[220px]"
-              iframeClassName="absolute inset-0"
+              fit="cover"
+              className="h-full min-h-[220px] self-stretch"
             />
           </div>
         )}
@@ -50,8 +50,7 @@ export function Playlists() {
                   <YouTubePlaylistEmbed
                     url={playlist.url}
                     title={playlist.title}
-                    className="relative aspect-[16/9] w-full"
-                    iframeClassName="absolute inset-0"
+                    className="aspect-[16/9] w-full"
                   />
                   <CardContent className="flex flex-1 flex-col px-8 pb-8 pt-7">
                     <p className="text-[12px] text-muted-foreground">{playlist.level}</p>
