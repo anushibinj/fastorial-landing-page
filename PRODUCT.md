@@ -10,11 +10,11 @@ web
 
 <!-- inferred: no interview in this unattended run; taken from existing site copy and content.json -->
 
-People learning software engineering who want short, practical tutorials rather than long courses. They arrive from YouTube, LinkedIn, or community links and need to understand who Fastorial is, what they can watch now, and where to join.
+People learning software engineering who want short, practical tutorials and live-coded project streams. They arrive from YouTube, LinkedIn, Twitch, or community links and need to understand who Fastorial is, what is streaming now, and where to join.
 
 ## Product Purpose
 
-Fastorial is a marketing landing page for Anu Shibin Joseph Raj’s tech education channel. It should make a first-time visitor understand the offer (fast-paced software engineering tutorials and daily live-coded projects), see current playlists, live work, and upcoming courses, and subscribe or join the community.
+Fastorial is a marketing landing page for Anu Shibin Joseph Raj’s tech education channel. It should make a first-time visitor understand the offer (daily live-coded projects plus existing tutorial playlists), see current live work, and subscribe or join the community.
 
 Success is a visitor who watches a playlist or joins a community channel without hunting.
 
@@ -46,9 +46,9 @@ Single-page Vite + React marketing site, deployed on Firebase Hosting. Content l
 Confirmed in `src/data/content.json`:
 
 - Hero copy, about bio, profile photo URL, LinkedIn
-- Three YouTube playlists (URL and level). Artwork is the official playlist embed, not a stored thumbnail.
+- LinkedIn: https://www.linkedin.com/company/fastorial
 - Live projects: current and past playlists, plus upcoming product names and descriptions
-- Three courses with status and dates
+- Three YouTube tutorial playlists (URL and level). Artwork is the official playlist embed, not a stored thumbnail.
 - Social: YouTube, Twitch, LinkedIn, Discord, WhatsApp, Telegram
 - Stats: 10K+ students, 50+ tutorials, 5K+ community, 100% free — use only as supplied; do not inflate
 
@@ -56,7 +56,7 @@ No customer quotes, press, or hosted playlist artwork. Profile photo is an exter
 
 ## Product Principles
 
-1. Product truth over marketing theater: show the actual playlists and courses.
+1. Product truth over marketing theater: show the actual live projects and playlists.
 2. One obvious next step: watch on YouTube or join the community.
 3. Respect the visitor’s time: short copy, no filler sections.
 4. Do not fabricate social proof.

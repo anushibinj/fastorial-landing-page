@@ -8,14 +8,6 @@ export type Playlist = {
   level: string;
 };
 
-export type Course = {
-  id: number;
-  title: string;
-  description: string;
-  status: string;
-  startDate: string;
-};
-
 export type LiveProject = {
   name: string;
   status: string;
@@ -59,7 +51,6 @@ export type SiteContent = {
     past: Array<LiveProject & { url: string }>;
     upcoming: LiveProject[];
   };
-  courses: Course[];
   social: {
     youtube: string;
     linkedIn: string;

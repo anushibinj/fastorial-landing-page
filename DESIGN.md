@@ -116,7 +116,7 @@ Restrained: neutrals plus one accent.
 
 ### Neutral
 - **Paper** (#ffffff): default page.
-- **Mist** (#f5f5f7): courses, footer, playlist cards.
+- **Mist** (#f5f5f7): projects, footer, playlist cards.
 - **Ink** (#1d1d1f): type, nav, featured tile, community band.
 - **Muted** (#6e6e73): secondary copy.
 - **Hairline** (#d2d2d7): separators only.
@@ -156,9 +156,9 @@ Built on shadcn/ui (Button, Card, Separator, Avatar, Sheet) restyled to this sys
 - **Card:** mist fill, 18px, no border, no shadow. Used for secondary playlists.
 - **Featured tile:** ink panel, type left, YouTube playlist embed right on desktop; stacked on small screens. The embed is cropped (`object-fit: cover` equivalent) so the 16:9 player fills the panel with no letterbox.
 - **Playlist cards:** 16:9 YouTube playlist embed, then title and copy. Thumbnails come from YouTube, not from this repo.
-- **Projects:** current live build as a full-width ink module with a 16:9 embed; past builds as a split tile; upcoming names as a hairline list.
+- **Projects:** first content band after the hero. Current live build as a full-width ink module with a 16:9 embed; past builds as a split tile; upcoming names as a hairline list.
 - **Sheet:** full-width ink drawer from the top for mobile nav.
-- **Separator:** 1px hairline between courses.
+- **Separator:** 1px hairline between upcoming project names.
 
 ## Do's and Don'ts
 

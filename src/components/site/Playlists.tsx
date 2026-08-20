@@ -6,7 +6,7 @@ export function Playlists() {
   const [featured, ...rest] = content.playlists;
 
   return (
-    <section id="playlists" className="scroll-mt-12 bg-background pb-24 md:pb-32">
+    <section id="playlists" className="scroll-mt-12 bg-background py-24 md:py-32">
       <div className="mx-auto max-w-[980px] px-6">
         {featured && (
           <div className="grid overflow-hidden rounded-[18px] bg-foreground text-background md:grid-cols-[1.1fr_0.9fr]">

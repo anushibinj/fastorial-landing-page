@@ -16,7 +16,7 @@
     "typographyMeta": {
       "display": { "displayName": "Display", "purpose": "Hero headline only." },
       "headline": { "displayName": "Headline", "purpose": "Section titles." },
-      "title": { "displayName": "Title", "purpose": "Tile and course titles." },
+      "title": { "displayName": "Title", "purpose": "Tile and project titles." },
       "body": { "displayName": "Body", "purpose": "Default copy and controls." },
       "lede": { "displayName": "Lede", "purpose": "Supporting paragraph under a headline." },
       "label": { "displayName": "Label", "purpose": "Nav and meta." }
