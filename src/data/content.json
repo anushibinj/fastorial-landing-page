@@ -20,8 +20,8 @@
 		"name": "Anu Shibin Joseph Raj",
 		"profilePic": "https://raw.githubusercontent.com/fastorial/anushibinj/refs/heads/main/public/img/anu-shibin-profile-pic.jpeg",
 		"role": "Lead Software Engineer & Creator of Fastorial",
-		"bio": "With more than 9 years of experience in building scalable systems and mentoring developers, I founded this channel to share bite-sized, practical lessons that help you accelerate your growth in software engineering.</br></br>Have questions about your career or tech concepts?",
-		"linkedIn": "https://www.linkedin.com/in/anushibinj/"
+		"bio": "With more than 10 years of experience in building scalable systems and mentoring developers, I founded this channel to share bite-sized, practical lessons that help you accelerate your growth in software engineering.</br></br>Have questions about your career or tech concepts?",
+		"linkedIn": "https://www.linkedin.com/company/fastorial"
 	},
 	"playlists": [
 		{
@@ -29,55 +29,68 @@
 			"title": "Multithreading in Java",
 			"description": "Learn multithreading concepts with practical examples in this 5-part series.",
 			"url": "https://www.youtube.com/playlist?list=PLFsDocJcusVxL0jteBo4kDFqlZSkaLcTW",
-			"level": "All Levels",
-			"thumbnail": "https://i.ytimg.com/vi/gJ62S9ic5j4/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAqKvkyYrIdUsg6mAnca8TRig5cug"
+			"level": "All Levels"
 		},
 		{
 			"id": 2,
 			"title": "Java Streams API",
 			"description": "Learn the Java Streams API in a chill coding and learning session with me",
 			"url": "https://www.youtube.com/playlist?list=PLFsDocJcusVwkBUcfRdoMQLuc2wzDPny8",
-			"level": "Advanced",
-			"thumbnail": "https://i.ytimg.com/vi/jHJ79FRhycM/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCGcdToHbI7jzrq_e6FPwn4k6JLqQ"
+			"level": "Advanced"
 		},
 		{
 			"id": 3,
 			"title": "Spring Boot + React JS | Task Tracker Project",
 			"description": "Build a full-stack Task Tracker application using Spring Boot for the backend and React JS for the frontend. Deploy it to the cloud using Docker and Google Cloud Run.",
 			"url": "https://www.youtube.com/playlist?list=PLFsDocJcusVzPsrq1VujwvUQhVRs82OED",
-			"level": "All Levels",
-			"thumbnail": "https://i.ytimg.com/vi/BT1Er3ejLqM/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCC4Zr4oGL7bwsbPER72343MCw_bg"
+			"level": "All Levels"
 		}
 	],
-	"courses": [
-		{
-			"id": 1,
-			"title": "Design Patterns in Java",
-			"description": "Master essential design patterns in Java with practical examples to build robust and maintainable applications.",
-			"status": "In progress",
-			"startDate": "Since 14-Nov-2025"
+	"projects": {
+		"current": {
+			"name": "Project PostInTime",
+			"status": "Current",
+			"description": "Live every day.",
+			"url": "https://www.youtube.com/playlist?list=PLVFaD7RpWAbE"
 		},
-		{
-			"id": 2,
-			"title": "Java Interview Preparation",
-			"description": "Master essential Java concepts and prepare effectively for your interviews.",
-			"status": "Not started",
-			"startDate": "TBD"
-		},
-		{
-			"id": 2,
-			"title": "System Design Masterclass",
-			"description": "Master essential system design to build scalable and high-performance applications.",
-			"status": "Not started",
-			"startDate": "TBD"
-		}
-	],
+		"past": [
+			{
+				"name": "Project Heimdall",
+				"status": "Past",
+				"description": "A completed live-streamed build.",
+				"url": "https://www.youtube.com/playlist?list=PLeunN8x8zzcE"
+			}
+		],
+		"upcoming": [
+			{
+				"name": "saveas",
+				"status": "Upcoming",
+				"description": "Save any link (file) to any cloud service."
+			},
+			{
+				"name": "cacher",
+				"status": "Upcoming",
+				"description": "Cache any HTTP request to local storage for fast retrieval later."
+			},
+			{
+				"name": "sellez",
+				"status": "Upcoming",
+				"description": "OLX for corporates."
+			},
+			{
+				"name": "skillamp",
+				"status": "Upcoming",
+				"description": "Study now. Forget never."
+			}
+		]
+	},
 	"social": {
 		"youtube": "https://www.youtube.com/@fastorial",
-		"linkedIn": "https://www.linkedin.com/in/anushibinj/",
-		"discord": "discord.gg/6quJe2MDGm",
+		"linkedIn": "https://www.linkedin.com/company/fastorial",
+		"discord": "https://discord.gg/6quJe2MDGm",
 		"whatsapp": "https://chat.whatsapp.com/HZeQmatwujD2TucAenPHfI",
-		"telegram": "https://t.me/fastorial"
+		"telegram": "https://t.me/fastorial",
+		"twitch": "https://www.twitch.tv/fastorial"
 	},
 	"stats": [
 		{

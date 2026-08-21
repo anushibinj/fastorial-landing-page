@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta
 			name="description"
@@ -28,24 +28,15 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
 			rel="stylesheet"
 		/>
-		<title>Fastorial Landing Page</title>
-		<meta property="og:image" content="https://bolt.new/static/og_default.png" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
+		<title>Fastorial</title>
 
 		<script type="module">
-			// G-Analytics Firebase Setup
-			// Import the functions you need from the SDKs you need
 			import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
 			import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
-			// TODO: Add SDKs for Firebase products that you want to use
-			// https://firebase.google.com/docs/web/setup#available-libraries
 
-			// Your web app's Firebase configuration
-			// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 			const firebaseConfig = {
 				apiKey: "AIzaSyAM-ptbZ6drBVTJpNMs1K5GoB-29BeI93s",
 				authDomain: "fastorial.firebaseapp.com",
@@ -56,12 +47,19 @@
 				measurementId: "G-Z1J3935CDE",
 			};
 
-			// Initialize Firebase
 			const app = initializeApp(firebaseConfig);
-			const analytics = getAnalytics(app);
+			getAnalytics(app);
 		</script>
 	</head>
 	<body>
+		<!--
+      THESIS: Fastorial should read like an Apple product page — quiet chrome, huge type, real lessons as the product — not a SaaS gradient landing.
+      OWN-WORLD: White and #f5f5f7 grounds, #1d1d1f ink, #0071e3 links, Geist, 18px tiles, 12px blurred nav, pill buttons. Flat tonal layering, no glow.
+      STORY: Visitor sees the offer, watches a playlist, or joins a community room.
+      FIRST VIEWPORT: Sticky dark nav; centered 64px headline; lede; pill CTA + text link; then a 16:9 playlist tile.
+      FORM: User-pinned apple.com grammar with shadcn/ui. Seed: user-pinned-apple-shadcn.
+      FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+    -->
 		<div id="root"></div>
 		<script type="module" src="/src/main.tsx"></script>
 	</body>

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-20T07:36:00.000Z",
+  "title": "Design System: Fastorial",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Paper" },
+      "mist": { "role": "neutral", "displayName": "Mist" },
+      "ink": { "role": "neutral", "displayName": "Ink" },
+      "muted": { "role": "neutral", "displayName": "Muted" },
+      "hairline": { "role": "neutral", "displayName": "Hairline" },
+      "link": { "role": "primary", "displayName": "Link Blue" },
+      "link-hover": { "role": "primary", "displayName": "Link Blue Hover" },
+      "on-ink": { "role": "neutral", "displayName": "On Ink" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles." },
+      "title": { "displayName": "Title", "purpose": "Tile and project titles." },
+      "body": { "displayName": "Body", "purpose": "Default copy and controls." },
+      "lede": { "displayName": "Lede", "purpose": "Supporting paragraph under a headline." },
+      "label": { "displayName": "Label", "purpose": "Nav and meta." }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "color-200",
+        "value": "200ms",
+        "purpose": "Button and link color changes."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Default pill CTA on paper.",
+      "html": "<button class=\"ds-btn-primary\">Level up now</button>",
+      "css": ".ds-btn-primary { background: #0071e3; color: #fff; padding: 12px 20px; border: 0; border-radius: 999px; font-size: 17px; letter-spacing: -0.022em; } .ds-btn-primary:hover { background: #0077ed; } .ds-btn-primary:focus-visible { outline: 2px solid #0071e3; outline-offset: 2px; }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "Secondary action with a chevron.",
+      "html": "<a class=\"ds-text-link\" href=\"#\">Join Community <span>›</span></a>",
+      "css": ".ds-text-link { color: #0071e3; font-size: 17px; text-decoration: none; display: inline-flex; gap: 4px; } .ds-text-link:hover { opacity: 0.7; } .ds-text-link:focus-visible { outline: 2px solid #0071e3; outline-offset: 2px; }"
+    },
+    {
+      "name": "Mist Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Secondary playlist tile.",
+      "html": "<article class=\"ds-card\"><h3>Java Streams API</h3><p>Learn the Java Streams API.</p></article>",
+      "css": ".ds-card { background: #f5f5f7; color: #1d1d1f; border-radius: 18px; padding: 32px; } .ds-card h3 { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 12px; } .ds-card p { color: #6e6e73; font-size: 17px; margin: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A product page for lessons.",
+    "overview": "White and mist fields, ink chrome, one blue for action. Playlists are the product. Type does the hierarchy.",
+    "keyCharacteristics": [
+      "980px measure",
+      "18px tiles",
+      "pill CTAs",
+      "no shadows"
+    ],
+    "rules": [
+      {
+        "name": "The One Blue Rule",
+        "body": "Blue is for doing, never a fill.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tonal Field Rule",
+        "body": "Depth from paper, mist, and ink bands.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Keep the page mostly paper and mist.",
+      "Let playlist artwork stay photographic."
+    ],
+    "donts": [
+      "Don't restore gradient heroes or glass cards.",
+      "Don't add eyebrows or a second accent."
+    ]
+  }
+}
