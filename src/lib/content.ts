@@ -13,6 +13,7 @@ export type LiveProject = {
   status: string;
   description?: string;
   url?: string;
+  image?: string;
 };
 
 export type Stat = {
