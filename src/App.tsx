@@ -1,7 +1,7 @@
 import { SiteHeader } from '@/components/site/SiteHeader';
 import { Hero } from '@/components/site/Hero';
 import { Projects } from '@/components/site/Projects';
-import { Playlists } from '@/components/site/Playlists';
+import { Courses } from '@/components/site/Courses';
 import { About } from '@/components/site/About';
 import { Community } from '@/components/site/Community';
 import { SiteFooter } from '@/components/site/SiteFooter';
@@ -19,7 +19,7 @@ function App() {
       <main id="top">
         <Hero />
         <Projects />
-        <Playlists />
+        <Courses />
         <About />
         <Community />
       </main>

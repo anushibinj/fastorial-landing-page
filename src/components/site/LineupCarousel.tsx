@@ -2,7 +2,12 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
-import { TextLink } from '@/components/site/TextLink';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import { YouTubePlaylistEmbed } from '@/components/site/YouTubePlaylistEmbed';
 import { cn } from '@/lib/utils';
 
@@ -36,6 +41,7 @@ export function LineupCarousel({
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
+  const [selected, setSelected] = useState<LineupItem | null>(null);
 
   const updateEdges = useCallback(() => {
     const el = scrollerRef.current;
@@ -81,13 +87,18 @@ export function LineupCarousel({
 
       <div
         ref={scrollerRef}
-        className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain px-6 scrollbar-none md:mx-auto md:max-w-[980px] md:px-6"
+        className="mt-10 flex snap-x snap-mandatory items-stretch gap-5 overflow-x-auto overscroll-x-contain px-6 scrollbar-none md:mx-auto md:max-w-[980px] md:px-6"
         role="list"
         aria-label={label}
         tabIndex={0}
       >
         {items.map((item, index) => (
-          <LineupCard key={item.id} item={item} featured={index === 0} />
+          <LineupCard
+            key={item.id}
+            item={item}
+            featured={index === 0}
+            onOpenDetails={() => setSelected(item)}
+          />
         ))}
       </div>
 
@@ -117,16 +128,32 @@ export function LineupCarousel({
           </Button>
         </div>
       )}
+
+      <DetailsDialog
+        item={selected}
+        featured={selected ? items[0]?.id === selected.id : false}
+        onOpenChange={(open) => {
+          if (!open) setSelected(null);
+        }}
+      />
     </section>
   );
 }
 
-function LineupCard({ item, featured }: { item: LineupItem; featured: boolean }) {
+function LineupCard({
+  item,
+  featured,
+  onOpenDetails,
+}: {
+  item: LineupItem;
+  featured: boolean;
+  onOpenDetails: () => void;
+}) {
   return (
     <article
       data-lineup-card
       role="listitem"
-      className="flex w-[min(78vw,300px)] shrink-0 snap-start flex-col"
+      className="flex h-full w-[min(78vw,300px)] shrink-0 snap-start flex-col"
     >
       <div
         className={cn(
@@ -136,38 +163,94 @@ function LineupCard({ item, featured }: { item: LineupItem; featured: boolean })
       >
         <LineupMedia item={item} featured={featured} />
       </div>
-      <p className="mt-5 text-[12px] text-muted-foreground">{item.kicker}</p>
-      <h3 className="mt-1 text-[21px] font-semibold leading-tight tracking-[-0.02em] text-foreground md:text-[24px]">
+      <p className="mt-5 h-4 truncate text-[12px] leading-4 text-muted-foreground">{item.kicker}</p>
+      <h3 className="mt-1 h-[3.45rem] overflow-hidden text-[21px] font-semibold leading-tight tracking-[-0.02em] text-foreground line-clamp-2">
         {item.title}
       </h3>
-      <p className="mt-2 min-h-[4.8rem] text-[14px] leading-relaxed text-muted-foreground md:text-[17px]">
+      <button
+        type="button"
+        onClick={onOpenDetails}
+        className="mt-2 h-[4.4rem] overflow-hidden text-left text-[14px] leading-relaxed text-muted-foreground line-clamp-3 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      >
         {item.description}
-      </p>
-      <div className="mt-4 flex min-h-11 flex-wrap items-center gap-x-5 gap-y-2">
+      </button>
+      <div className="mt-4 flex h-11 items-center gap-x-5">
         {item.url ? (
-          <>
-            <Button asChild size="sm">
-              <a href={item.url} target="_blank" rel="noopener noreferrer">
-                {item.ctaLabel ?? 'Watch'}
-              </a>
-            </Button>
-            <TextLink href={item.url} external className="text-[14px] md:text-[17px]">
-              Playlist
-            </TextLink>
-          </>
+          <Button asChild size="sm">
+            <a href={item.url} target="_blank" rel="noopener noreferrer">
+              {item.ctaLabel ?? 'Watch'}
+            </a>
+          </Button>
         ) : (
-          <p className="text-[14px] text-muted-foreground">Coming soon</p>
+          <span className="text-[14px] text-muted-foreground">Coming soon</span>
         )}
+        <button
+          type="button"
+          onClick={onOpenDetails}
+          className="inline-flex items-center gap-1 text-[14px] tracking-[-0.022em] text-primary hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          More details
+          <span aria-hidden className="translate-y-px text-[20px] font-light leading-none">
+            ›
+          </span>
+        </button>
       </div>
     </article>
   );
 }
 
-function LineupMedia({ item, featured }: { item: LineupItem; featured: boolean }) {
+function DetailsDialog({
+  item,
+  featured,
+  onOpenChange,
+}: {
+  item: LineupItem | null;
+  featured: boolean;
+  onOpenChange: (open: boolean) => void;
+}) {
+  return (
+    <Dialog open={Boolean(item)} onOpenChange={onOpenChange}>
+      {item && (
+        <DialogContent>
+          <div
+            className={cn(
+              'aspect-[16/9] overflow-hidden rounded-[22px]',
+              featured ? 'bg-black' : 'bg-muted',
+            )}
+          >
+            <LineupMedia item={item} featured={featured} interactive />
+          </div>
+          <p className="mt-6 text-[12px] text-muted-foreground">{item.kicker}</p>
+          <DialogTitle className="mt-1">{item.title}</DialogTitle>
+          <DialogDescription className="mt-4 text-foreground/90">
+            {item.description}
+          </DialogDescription>
+          {item.url && (
+            <div className="mt-8">
+              <Button asChild>
+                <a href={item.url} target="_blank" rel="noopener noreferrer">
+                  {item.ctaLabel ?? 'Watch'}
+                </a>
+              </Button>
+            </div>
+          )}
+        </DialogContent>
+      )}
+    </Dialog>
+  );
+}
+
+function LineupMedia({
+  item,
+  featured,
+  interactive = false,
+}: {
+  item: LineupItem;
+  featured: boolean;
+  interactive?: boolean;
+}) {
   if (item.image) {
-    return (
-      <img src={item.image} alt="" className="h-full w-full object-cover" />
-    );
+    return <img src={item.image} alt="" className="h-full w-full object-cover" />;
   }
 
   if (item.url) {
@@ -176,14 +259,12 @@ function LineupMedia({ item, featured }: { item: LineupItem; featured: boolean }
         url={item.url}
         title={item.title}
         fit="cover"
-        className="pointer-events-none h-full w-full"
+        className={cn('h-full w-full', !interactive && 'pointer-events-none')}
       />
     );
   }
 
-  return (
-    <PlaceholderMark title={item.title} featured={featured} />
-  );
+  return <PlaceholderMark title={item.title} featured={featured} />;
 }
 
 function PlaceholderMark({ title, featured }: { title: string; featured: boolean }) {
@@ -194,7 +275,7 @@ function PlaceholderMark({ title, featured }: { title: string; featured: boolean
         featured ? 'text-white' : 'text-foreground',
       )}
     >
-      <span className="text-[28px] font-semibold tracking-[-0.03em]">{title}</span>
+      <span className="line-clamp-3 text-[28px] font-semibold tracking-[-0.03em]">{title}</span>
     </div>
   );
 }

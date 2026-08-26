@@ -1,14 +1,14 @@
 import { LineupCarousel } from '@/components/site/LineupCarousel';
 import { content } from '@/lib/content';
 
-export function Playlists() {
+export function Courses() {
   return (
     <LineupCarousel
-      id="playlists"
+      id="courses"
       className="bg-background"
-      heading="Playlists."
-      lede="Curated series from fundamentals to the work you will actually ship."
-      label="Playlists"
+      heading="Courses."
+      lede="Recorded series you can start anytime. Follow one topic from the first lesson to the last."
+      label="Courses"
       items={content.playlists.map((playlist) => ({
         id: String(playlist.id),
         kicker: playlist.level,

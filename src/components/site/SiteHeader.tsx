@@ -13,7 +13,7 @@ import { content } from '@/lib/content';
 
 const navItems = [
   { label: 'Projects', id: 'projects' },
-  { label: 'Playlists', id: 'playlists' },
+  { label: 'Courses', id: 'courses' },
   { label: 'About', id: 'about' },
   { label: 'Community', id: 'community' },
 ];
