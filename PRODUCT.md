@@ -49,7 +49,7 @@ Confirmed in `src/data/content.json`:
 - LinkedIn: https://www.linkedin.com/company/fastorial
 - Live projects: current and past playlists, plus upcoming product names and descriptions
 - Three YouTube tutorial playlists (URL and level). Artwork is the official playlist embed, not a stored thumbnail.
-- Social: YouTube, Twitch, LinkedIn, Discord, WhatsApp, Telegram
+- Social: YouTube, Instagram, Twitch, LinkedIn, Discord, WhatsApp, Telegram
 - Stats: 10K+ students, 50+ tutorials, 5K+ community, 100% free — use only as supplied; do not inflate
 
 No customer quotes, press, or hosted playlist artwork. Profile photo is an external URL.

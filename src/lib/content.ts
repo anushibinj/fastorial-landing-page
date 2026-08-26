@@ -58,6 +58,7 @@ export type SiteContent = {
     whatsapp: string;
     telegram: string;
     twitch: string;
+    instagram: string;
   };
   stats: Stat[];
 };
