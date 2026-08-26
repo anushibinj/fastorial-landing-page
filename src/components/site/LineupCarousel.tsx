@@ -164,13 +164,13 @@ function LineupCard({
         <LineupMedia item={item} featured={featured} />
       </div>
       <p className="mt-5 h-4 truncate text-[12px] leading-4 text-muted-foreground">{item.kicker}</p>
-      <h3 className="mt-1 h-[3.45rem] overflow-hidden text-[21px] font-semibold leading-tight tracking-[-0.02em] text-foreground line-clamp-2">
+      <h3 className="mt-1 truncate text-[21px] font-semibold leading-tight tracking-[-0.02em] text-foreground">
         {item.title}
       </h3>
       <button
         type="button"
         onClick={onOpenDetails}
-        className="mt-2 flex h-[4.4rem] items-start overflow-hidden p-0 text-left text-[14px] leading-relaxed text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="mt-1 flex h-[4.4rem] items-start overflow-hidden p-0 text-left text-[14px] leading-relaxed text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
         <span className="line-clamp-3 w-full">{item.description}</span>
       </button>
