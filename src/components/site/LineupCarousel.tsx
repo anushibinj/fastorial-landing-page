@@ -170,9 +170,9 @@ function LineupCard({
       <button
         type="button"
         onClick={onOpenDetails}
-        className="mt-2 h-[4.4rem] overflow-hidden text-left text-[14px] leading-relaxed text-muted-foreground line-clamp-3 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="mt-2 block h-[4.4rem] overflow-hidden p-0 text-left text-[14px] leading-relaxed text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
-        {item.description}
+        <span className="line-clamp-3">{item.description}</span>
       </button>
       <div className="mt-4 flex h-11 items-center gap-x-5">
         {item.url ? (
