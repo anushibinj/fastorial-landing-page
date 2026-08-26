@@ -271,7 +271,7 @@ function PlaceholderMark({ title, featured }: { title: string; featured: boolean
   return (
     <div
       className={cn(
-        'flex h-full w-full items-center justify-center px-6 text-center',
+        'flex h-full w-full items-start justify-start px-6 pt-6 text-left',
         featured ? 'text-white' : 'text-foreground',
       )}
     >
