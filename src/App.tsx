@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { SiteHeader } from '@/components/site/SiteHeader';
 import { Hero } from '@/components/site/Hero';
 import { Projects } from '@/components/site/Projects';
@@ -6,7 +8,21 @@ import { About } from '@/components/site/About';
 import { Community } from '@/components/site/Community';
 import { SiteFooter } from '@/components/site/SiteFooter';
 
+function scrollToHash() {
+  const id = window.location.hash.replace(/^#/, '');
+  if (!id) return;
+  requestAnimationFrame(() => {
+    document.getElementById(id)?.scrollIntoView({ block: 'start' });
+  });
+}
+
 function App() {
+  useEffect(() => {
+    scrollToHash();
+    window.addEventListener('hashchange', scrollToHash);
+    return () => window.removeEventListener('hashchange', scrollToHash);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <a

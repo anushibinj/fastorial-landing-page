@@ -12,7 +12,6 @@ export function Projects() {
       description: current.description ?? '',
       url: current.url,
       image: current.image,
-      ctaLabel: 'Watch live',
     },
     ...past.map((project) => ({
       id: `past-${project.name}`,
