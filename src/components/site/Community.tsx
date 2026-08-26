@@ -5,6 +5,7 @@ import { externalHref } from '@/lib/utils';
 
 const platforms = [
   { name: 'YouTube', href: content.social.youtube },
+  { name: 'Instagram', href: content.social.instagram },
   { name: 'Twitch', href: content.social.twitch },
   { name: 'Discord', href: content.social.discord },
   { name: 'WhatsApp', href: content.social.whatsapp },
@@ -14,7 +15,7 @@ const platforms = [
 
 export function Community() {
   return (
-    <section id="community" className="scroll-mt-12 bg-foreground py-24 text-background md:py-32">
+    <section id="community" className="bg-foreground py-24 text-background md:py-32">
       <div className="mx-auto max-w-[980px] px-6 text-center">
         <h2 className="text-[32px] font-semibold tracking-[-0.025em] md:text-[48px]">
           Learn with other builders.

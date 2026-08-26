@@ -153,12 +153,8 @@ Built on shadcn/ui (Button, Card, Separator, Avatar, Sheet) restyled to this sys
 - **Primary button:** link blue, white type, full pill, 17px.
 - **On-ink button:** white fill, ink type, used on the community band.
 - **Text link:** link blue plus a ›. External links open in a new tab.
-- **Card:** mist fill, 18px, no border, no shadow. Used for secondary playlists.
-- **Featured tile:** ink panel, type left, YouTube playlist embed right on desktop; stacked on small screens. The embed is cropped (`object-fit: cover` equivalent) so the 16:9 player fills the panel with no letterbox.
-- **Playlist cards:** 16:9 YouTube playlist embed, then title and copy. Thumbnails come from YouTube, not from this repo.
-- **Projects:** first content band after the hero. Current live build as a full-width ink module with a 16:9 embed; past builds as a split tile; upcoming names as a hairline list.
-- **Sheet:** full-width ink drawer from the top for mobile nav.
-- **Separator:** 1px hairline between upcoming project names.
+- **Lineup carousel:** each category is a horizontal, snap-scrolling row of equal-width cards. The first card’s media well is ink; the rest sit on mist. Mobile shows most of one card plus a peek of the next. Circular gray prev/next controls sit under the row, right-aligned.
+- **Lineup card:** 4:3 rounded media (YouTube embed, optional still, or a type placeholder), then kicker, title, copy, and a pill plus text link. Upcoming projects use the same card without a video until an image is supplied.
 
 ## Do's and Don'ts
 

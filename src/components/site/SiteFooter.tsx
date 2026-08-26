@@ -4,6 +4,7 @@ import { externalHref } from '@/lib/utils';
 
 const footerLinks = [
   { label: 'YouTube', href: content.social.youtube },
+  { label: 'Instagram', href: content.social.instagram },
   { label: 'Twitch', href: content.social.twitch },
   { label: 'LinkedIn', href: content.social.linkedIn },
   { label: 'Discord', href: content.social.discord },

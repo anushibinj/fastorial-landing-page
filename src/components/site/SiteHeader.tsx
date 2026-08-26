@@ -13,14 +13,10 @@ import { content } from '@/lib/content';
 
 const navItems = [
   { label: 'Projects', id: 'projects' },
-  { label: 'Playlists', id: 'playlists' },
+  { label: 'Courses', id: 'courses' },
   { label: 'About', id: 'about' },
   { label: 'Community', id: 'community' },
 ];
-
-function scrollToId(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-}
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -37,14 +33,8 @@ export function SiteHeader() {
 
         <nav className="hidden items-center md:flex" aria-label="Primary">
           {navItems.map((item) => (
-            <Button
-              key={item.id}
-              type="button"
-              variant="nav"
-              size="nav"
-              onClick={() => scrollToId(item.id)}
-            >
-              {item.label}
+            <Button key={item.id} variant="nav" size="nav" asChild>
+              <a href={`#${item.id}`}>{item.label}</a>
             </Button>
           ))}
         </nav>
@@ -75,15 +65,13 @@ export function SiteHeader() {
               {navItems.map((item) => (
                 <Button
                   key={item.id}
-                  type="button"
                   variant="ghost"
                   className="h-12 justify-start rounded-lg px-3 text-[28px] font-semibold tracking-[-0.02em] text-white hover:bg-white/10"
-                  onClick={() => {
-                    setOpen(false);
-                    scrollToId(item.id);
-                  }}
+                  asChild
                 >
-                  {item.label}
+                  <a href={`#${item.id}`} onClick={() => setOpen(false)}>
+                    {item.label}
+                  </a>
                 </Button>
               ))}
               <Button

@@ -69,4 +69,13 @@
   .font-display {
     font-family: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, sans-serif;
   }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
 }
