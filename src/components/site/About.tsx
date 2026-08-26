@@ -11,7 +11,7 @@ export function About() {
     .join('');
 
   return (
-    <section id="about" className="scroll-mt-12 bg-background py-24 md:py-32">
+    <section id="about" className="bg-background py-24 md:py-32">
       <div className="mx-auto max-w-[980px] px-6">
         <h2 className="text-[32px] font-semibold tracking-[-0.025em] text-foreground md:text-[48px]">
           About.

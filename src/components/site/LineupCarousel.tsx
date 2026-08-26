@@ -73,7 +73,7 @@ export function LineupCarousel({
   };
 
   return (
-    <section id={id} className={cn('scroll-mt-12 py-24 md:py-32', className)}>
+    <section id={id} className={cn('py-24 md:py-32', className)}>
       <div className="mx-auto max-w-[980px] px-6">
         <h2 className="text-[32px] font-semibold tracking-[-0.025em] text-foreground md:text-[48px]">
           {heading}
