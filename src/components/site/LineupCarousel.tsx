@@ -153,7 +153,7 @@ function LineupCard({
     <article
       data-lineup-card
       role="listitem"
-      className="flex h-full w-[min(78vw,300px)] shrink-0 snap-start flex-col"
+      className="flex h-full w-[min(78vw,300px)] min-w-0 shrink-0 snap-start flex-col"
     >
       <div
         className={cn(
@@ -164,7 +164,7 @@ function LineupCard({
         <LineupMedia item={item} featured={featured} />
       </div>
       <p className="mt-5 h-4 truncate text-[12px] leading-4 text-muted-foreground">{item.kicker}</p>
-      <h3 className="mt-1 truncate text-[21px] font-semibold leading-tight tracking-[-0.02em] text-foreground">
+      <h3 className="mt-1 block min-w-0 overflow-hidden text-ellipsis whitespace-nowrap text-[21px] font-semibold leading-[26px] tracking-[-0.02em] text-foreground">
         {item.title}
       </h3>
       <button
@@ -271,7 +271,7 @@ function PlaceholderMark({ title, featured }: { title: string; featured: boolean
   return (
     <div
       className={cn(
-        'flex h-full w-full items-start justify-start px-6 pt-6 text-left',
+        'flex h-full w-full items-center justify-center px-6 text-center',
         featured ? 'text-white' : 'text-foreground',
       )}
     >
