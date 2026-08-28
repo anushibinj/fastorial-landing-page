@@ -29,6 +29,7 @@
 			"title": "Multithreading in Java",
 			"description": "Learn multithreading concepts with practical examples in this 5-part series.",
 			"url": "https://www.youtube.com/playlist?list=PLFsDocJcusVxL0jteBo4kDFqlZSkaLcTW",
+			"githubUrl": "https://github.com/anushibinj/ThreadPracticeGround",
 			"level": "All Levels"
 		},
 		{
@@ -36,6 +37,7 @@
 			"title": "Java Streams API",
 			"description": "Learn the Java Streams API in a chill coding and learning session with me",
 			"url": "https://www.youtube.com/playlist?list=PLFsDocJcusVwkBUcfRdoMQLuc2wzDPny8",
+			"githubUrl": "https://github.com/anushibinj/stream-problems",
 			"level": "Advanced"
 		},
 		{
@@ -43,6 +45,7 @@
 			"title": "Spring Boot + React JS | Task Tracker Project",
 			"description": "Build a full-stack Task Tracker application using Spring Boot for the backend and React JS for the frontend. Deploy it to the cloud using Docker and Google Cloud Run.",
 			"url": "https://www.youtube.com/playlist?list=PLFsDocJcusVzPsrq1VujwvUQhVRs82OED",
+			"githubUrl": "https://github.com/anushibinj/task-tracker-project`",
 			"level": "All Levels"
 		}
 	],
