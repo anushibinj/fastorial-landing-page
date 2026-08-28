@@ -1,5 +1,6 @@
 import { LineupCarousel } from '@/components/site/LineupCarousel';
 import { content } from '@/lib/content';
+import { optionalHref } from '@/lib/utils';
 
 export function Projects() {
   const { current, past, upcoming } = content.projects;
@@ -11,7 +12,7 @@ export function Projects() {
       title: current.name,
       description: current.description ?? '',
       url: current.url,
-      githubUrl: current.githubUrl,
+      githubUrl: optionalHref(current.githubUrl),
       image: current.image,
     },
     ...past.map((project) => ({
@@ -20,7 +21,7 @@ export function Projects() {
       title: project.name,
       description: project.description ?? '',
       url: project.url,
-      githubUrl: project.githubUrl,
+      githubUrl: optionalHref(project.githubUrl),
       image: project.image,
     })),
     ...upcoming.map((project) => ({
@@ -29,7 +30,7 @@ export function Projects() {
       title: project.name,
       description: project.description ?? '',
       url: project.url,
-      githubUrl: project.githubUrl,
+      githubUrl: optionalHref(project.githubUrl),
       image: project.image,
     })),
   ];

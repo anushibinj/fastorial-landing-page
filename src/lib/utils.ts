@@ -10,6 +10,11 @@ export function externalHref(url: string) {
   return `https://${url}`;
 }
 
+export function optionalHref(url?: string) {
+  const value = url?.trim();
+  return value ? value : undefined;
+}
+
 export function playlistIdFromUrl(url: string) {
   try {
     return new URL(url).searchParams.get('list');

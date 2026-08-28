@@ -1,5 +1,6 @@
 import { LineupCarousel } from '@/components/site/LineupCarousel';
 import { content } from '@/lib/content';
+import { optionalHref } from '@/lib/utils';
 
 export function Courses() {
   return (
@@ -15,6 +16,7 @@ export function Courses() {
         title: playlist.title,
         description: playlist.description,
         url: playlist.url,
+        githubUrl: optionalHref(playlist.githubUrl),
       }))}
     />
   );
