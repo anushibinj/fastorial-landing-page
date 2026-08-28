@@ -62,7 +62,8 @@
 				"name": "Project PostInTime",
 				"status": "Past",
 				"description": "A Social Media Management platform.",
-				"url": "https://www.youtube.com/playlist?list=PLVFaD7RpWAbE"
+				"url": "https://www.youtube.com/playlist?list=PLVFaD7RpWAbE",
+				"githubUrl": "https://github.com/anushibinj/postintime"
 			},
 			{
 				"name": "Project Heimdall",
