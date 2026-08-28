@@ -51,14 +51,16 @@
 			"name": "Project PostInTime",
 			"status": "Current",
 			"description": "A Social Media Management platform.",
-			"url": "https://www.youtube.com/playlist?list=PLVFaD7RpWAbE"
+			"url": "https://www.youtube.com/playlist?list=PLVFaD7RpWAbE",
+			"githubUrl": "https://github.com/anushibinj/postintime"
 		},
 		"past": [
 			{
 				"name": "Project Heimdall",
 				"status": "Past",
 				"description": "A modern, self-hosted database backup platform completely built in public.",
-				"url": "https://www.youtube.com/playlist?list=PLeunN8x8zzcE"
+				"url": "https://www.youtube.com/playlist?list=PLeunN8x8zzcE",
+				"githubUrl": "https://github.com/anushibinj/heimdall"
 			}
 		],
 		"upcoming": [
@@ -75,7 +77,8 @@
 			{
 				"name": "sellez",
 				"status": "Upcoming",
-				"description": "OLX for corporates."
+				"description": "OLX for corporates.",
+				"githubUrl": "https://github.com/anushibinj/sellez"
 			},
 			{
 				"name": "skillamp",
