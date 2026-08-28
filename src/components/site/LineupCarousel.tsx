@@ -9,7 +9,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { YouTubePlaylistEmbed } from '@/components/site/YouTubePlaylistEmbed';
-import { cn, externalHref } from '@/lib/utils';
+import { cn, externalHref, optionalHref } from '@/lib/utils';
 
 export type LineupItem = {
   id: string;
@@ -150,6 +150,8 @@ function LineupCard({
   featured: boolean;
   onOpenDetails: () => void;
 }) {
+  const githubUrl = optionalHref(item.githubUrl);
+
   return (
     <article
       data-lineup-card
@@ -186,8 +188,8 @@ function LineupCard({
           ) : (
             <span className="text-[14px] text-muted-foreground">Coming soon</span>
           )}
-          {item.githubUrl && item.url && (
-            <GithubIconButton href={item.githubUrl} title={item.title} />
+          {githubUrl && item.url && (
+            <GithubIconButton href={githubUrl} title={item.title} />
           )}
         </div>
         <button
@@ -214,6 +216,8 @@ function DetailsDialog({
   featured: boolean;
   onOpenChange: (open: boolean) => void;
 }) {
+  const githubUrl = optionalHref(item?.githubUrl);
+
   return (
     <Dialog open={Boolean(item)} onOpenChange={onOpenChange}>
       {item && (
@@ -231,15 +235,15 @@ function DetailsDialog({
           <DialogDescription className="mt-4 text-foreground/90">
             {item.description}
           </DialogDescription>
-          {item.githubUrl && (
+          {githubUrl && (
             <a
-              href={externalHref(item.githubUrl)}
+              href={externalHref(githubUrl)}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-flex max-w-full items-center gap-2 text-[14px] tracking-[-0.022em] text-foreground hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <Github className="h-5 w-5 shrink-0" aria-hidden />
-              <span className="min-w-0 break-all">{item.githubUrl}</span>
+              <span className="min-w-0 break-all">{githubUrl}</span>
             </a>
           )}
           {item.url && (
