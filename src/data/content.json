@@ -48,13 +48,19 @@
 	],
 	"projects": {
 		"current": {
-			"name": "Project PostInTime",
+			"name": "Project SellEZ",
 			"status": "Current",
-			"description": "A Social Media Management platform.",
-			"url": "https://www.youtube.com/playlist?list=PLVFaD7RpWAbE",
-			"githubUrl": "https://github.com/anushibinj/postintime"
+			"description": "OLX for corporates.",
+			"url": "https://www.youtube.com/playlist?list=PLKK5uvj6vlQ0",
+			"githubUrl": "https://github.com/anushibinj/sellez"
 		},
 		"past": [
+			{
+				"name": "Project PostInTime",
+				"status": "Past",
+				"description": "A Social Media Management platform.",
+				"url": "https://www.youtube.com/playlist?list=PLVFaD7RpWAbE"
+			},
 			{
 				"name": "Project Heimdall",
 				"status": "Past",
@@ -73,12 +79,6 @@
 				"name": "cacher",
 				"status": "Upcoming",
 				"description": "Cache any HTTP request to local storage for fast retrieval later."
-			},
-			{
-				"name": "sellez",
-				"status": "Upcoming",
-				"description": "OLX for corporates.",
-				"githubUrl": "https://github.com/anushibinj/sellez"
 			},
 			{
 				"name": "skillamp",
