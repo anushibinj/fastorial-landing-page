@@ -6,6 +6,7 @@ export type Playlist = {
   description: string;
   url: string;
   level: string;
+  status?: string;
   githubUrl?: string;
 };
 
