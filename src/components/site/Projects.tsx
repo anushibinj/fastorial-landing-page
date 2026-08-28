@@ -11,6 +11,7 @@ export function Projects() {
       title: current.name,
       description: current.description ?? '',
       url: current.url,
+      githubUrl: current.githubUrl,
       image: current.image,
     },
     ...past.map((project) => ({
@@ -19,6 +20,7 @@ export function Projects() {
       title: project.name,
       description: project.description ?? '',
       url: project.url,
+      githubUrl: project.githubUrl,
       image: project.image,
     })),
     ...upcoming.map((project) => ({
@@ -27,6 +29,7 @@ export function Projects() {
       title: project.name,
       description: project.description ?? '',
       url: project.url,
+      githubUrl: project.githubUrl,
       image: project.image,
     })),
   ];

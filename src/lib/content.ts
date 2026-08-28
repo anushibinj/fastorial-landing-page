@@ -13,6 +13,7 @@ export type LiveProject = {
   status: string;
   description?: string;
   url?: string;
+  githubUrl?: string;
   image?: string;
 };
 

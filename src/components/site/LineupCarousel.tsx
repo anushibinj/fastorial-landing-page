@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Github } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -9,7 +9,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { YouTubePlaylistEmbed } from '@/components/site/YouTubePlaylistEmbed';
-import { cn } from '@/lib/utils';
+import { cn, externalHref } from '@/lib/utils';
 
 export type LineupItem = {
   id: string;
@@ -17,6 +17,7 @@ export type LineupItem = {
   title: string;
   description: string;
   url?: string;
+  githubUrl?: string;
   image?: string;
   ctaLabel?: string;
 };
@@ -175,15 +176,20 @@ function LineupCard({
         <span className="line-clamp-3 w-full">{item.description}</span>
       </button>
       <div className="mt-4 flex h-11 items-center gap-x-5">
-        {item.url ? (
-          <Button asChild size="sm">
-            <a href={item.url} target="_blank" rel="noopener noreferrer">
-              {item.ctaLabel ?? 'Watch'}
-            </a>
-          </Button>
-        ) : (
-          <span className="text-[14px] text-muted-foreground">Coming soon</span>
-        )}
+        <div className="flex items-center gap-2">
+          {item.url ? (
+            <Button asChild size="sm">
+              <a href={item.url} target="_blank" rel="noopener noreferrer">
+                {item.ctaLabel ?? 'Watch'}
+              </a>
+            </Button>
+          ) : (
+            <span className="text-[14px] text-muted-foreground">Coming soon</span>
+          )}
+          {item.githubUrl && item.url && (
+            <GithubIconButton href={item.githubUrl} title={item.title} />
+          )}
+        </div>
         <button
           type="button"
           onClick={onOpenDetails}
@@ -225,6 +231,17 @@ function DetailsDialog({
           <DialogDescription className="mt-4 text-foreground/90">
             {item.description}
           </DialogDescription>
+          {item.githubUrl && (
+            <a
+              href={externalHref(item.githubUrl)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex max-w-full items-center gap-2 text-[14px] tracking-[-0.022em] text-foreground hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <Github className="h-5 w-5 shrink-0" aria-hidden />
+              <span className="min-w-0 break-all">{item.githubUrl}</span>
+            </a>
+          )}
           {item.url && (
             <div className="mt-8">
               <Button asChild>
@@ -237,6 +254,21 @@ function DetailsDialog({
         </DialogContent>
       )}
     </Dialog>
+  );
+}
+
+function GithubIconButton({ href, title }: { href: string; title: string }) {
+  return (
+    <Button asChild size="icon" variant="outline" className="h-9 w-9 shrink-0">
+      <a
+        href={externalHref(href)}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`View ${title} on GitHub`}
+      >
+        <Github className="h-4 w-4" />
+      </a>
+    </Button>
   );
 }
 

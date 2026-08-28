@@ -65,7 +65,8 @@
 				"name": "Project Heimdall",
 				"status": "Past",
 				"description": "A modern, self-hosted database backup platform completely built in public.",
-				"url": "https://www.youtube.com/playlist?list=PLeunN8x8zzcE"
+				"url": "https://www.youtube.com/playlist?list=PLeunN8x8zzcE",
+				"githubUrl": "https://github.com/anushibinj/heimdall"
 			}
 		],
 		"upcoming": [
