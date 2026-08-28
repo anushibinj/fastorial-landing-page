@@ -15,6 +15,7 @@ export function Courses() {
         kicker: playlist.level,
         title: playlist.title,
         description: playlist.description,
+        status: playlist.status,
         url: playlist.url,
         githubUrl: optionalHref(playlist.githubUrl),
       }))}

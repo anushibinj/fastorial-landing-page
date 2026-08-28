@@ -16,11 +16,16 @@ export type LineupItem = {
   kicker: string;
   title: string;
   description: string;
+  status?: string;
   url?: string;
   githubUrl?: string;
   image?: string;
   ctaLabel?: string;
 };
+
+function isCurrentItem(item: Pick<LineupItem, 'status'>) {
+  return item.status === 'Current';
+}
 
 type LineupCarouselProps = {
   id?: string;
@@ -93,11 +98,10 @@ export function LineupCarousel({
         aria-label={label}
         tabIndex={0}
       >
-        {items.map((item, index) => (
+        {items.map((item) => (
           <LineupCard
             key={item.id}
             item={item}
-            featured={index === 0}
             onOpenDetails={() => setSelected(item)}
           />
         ))}
@@ -132,7 +136,6 @@ export function LineupCarousel({
 
       <DetailsDialog
         item={selected}
-        featured={selected ? items[0]?.id === selected.id : false}
         onOpenChange={(open) => {
           if (!open) setSelected(null);
         }}
@@ -143,37 +146,56 @@ export function LineupCarousel({
 
 function LineupCard({
   item,
-  featured,
   onOpenDetails,
 }: {
   item: LineupItem;
-  featured: boolean;
   onOpenDetails: () => void;
 }) {
   const githubUrl = optionalHref(item.githubUrl);
+  const isCurrent = isCurrentItem(item);
 
   return (
     <article
       data-lineup-card
       role="listitem"
-      className="flex h-full w-[min(78vw,300px)] min-w-0 shrink-0 snap-start flex-col"
+      className={cn(
+        'flex h-full w-[min(78vw,300px)] min-w-0 shrink-0 snap-start flex-col',
+        isCurrent && 'rounded-[28px] bg-black px-4 pb-5 pt-4 text-white',
+      )}
     >
       <div
         className={cn(
           'aspect-[4/3] overflow-hidden rounded-[28px]',
-          featured ? 'bg-black' : 'bg-muted',
+          isCurrent ? 'bg-black' : 'bg-muted',
         )}
       >
-        <LineupMedia item={item} featured={featured} />
+        <LineupMedia item={item} featured={isCurrent} />
       </div>
-      <p className="mt-5 h-4 truncate text-[12px] leading-4 text-muted-foreground">{item.kicker}</p>
-      <h3 className="mt-1 block min-w-0 overflow-hidden text-ellipsis whitespace-nowrap text-[21px] font-semibold leading-[26px] tracking-[-0.02em] text-foreground">
+      <p
+        className={cn(
+          'mt-5 h-4 truncate text-[12px] leading-4',
+          isCurrent ? 'text-white/70' : 'text-muted-foreground',
+        )}
+      >
+        {item.kicker}
+      </p>
+      <h3
+        className={cn(
+          'mt-1 block min-w-0 overflow-hidden text-ellipsis whitespace-nowrap text-[21px] font-semibold leading-[26px] tracking-[-0.02em]',
+          isCurrent ? 'text-white' : 'text-foreground',
+        )}
+      >
         {item.title}
       </h3>
       <button
         type="button"
         onClick={onOpenDetails}
-        className="mt-1 flex h-[4.4rem] items-start overflow-hidden p-0 text-left text-[14px] leading-relaxed text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className={cn(
+          'mt-1 flex h-[4.4rem] items-start overflow-hidden p-0 text-left text-[14px] leading-relaxed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+          isCurrent
+            ? 'text-white/80 hover:text-white'
+            : 'text-muted-foreground hover:text-foreground',
+        )}
       >
         <span className="line-clamp-3 w-full">{item.description}</span>
       </button>
@@ -186,10 +208,21 @@ function LineupCard({
               </a>
             </Button>
           ) : (
-            <span className="text-[14px] text-muted-foreground">Coming soon</span>
+            <span
+              className={cn(
+                'text-[14px]',
+                isCurrent ? 'text-white/70' : 'text-muted-foreground',
+              )}
+            >
+              Coming soon
+            </span>
           )}
           {githubUrl && item.url && (
-            <GithubIconButton href={githubUrl} title={item.title} />
+            <GithubIconButton
+              href={githubUrl}
+              title={item.title}
+              className={isCurrent ? 'border-white/30 text-white hover:bg-white/10' : undefined}
+            />
           )}
         </div>
         <button
@@ -209,11 +242,9 @@ function LineupCard({
 
 function DetailsDialog({
   item,
-  featured,
   onOpenChange,
 }: {
   item: LineupItem | null;
-  featured: boolean;
   onOpenChange: (open: boolean) => void;
 }) {
   const githubUrl = optionalHref(item?.githubUrl);
@@ -222,13 +253,8 @@ function DetailsDialog({
     <Dialog open={Boolean(item)} onOpenChange={onOpenChange}>
       {item && (
         <DialogContent>
-          <div
-            className={cn(
-              'aspect-[16/9] overflow-hidden rounded-[22px]',
-              featured ? 'bg-black' : 'bg-muted',
-            )}
-          >
-            <LineupMedia item={item} featured={featured} interactive />
+          <div className="aspect-[16/9] overflow-hidden rounded-[22px] bg-muted">
+            <LineupMedia item={item} featured={false} interactive />
           </div>
           <p className="mt-6 text-[12px] text-muted-foreground">{item.kicker}</p>
           <DialogTitle className="mt-1">{item.title}</DialogTitle>
@@ -261,9 +287,17 @@ function DetailsDialog({
   );
 }
 
-function GithubIconButton({ href, title }: { href: string; title: string }) {
+function GithubIconButton({
+  href,
+  title,
+  className,
+}: {
+  href: string;
+  title: string;
+  className?: string;
+}) {
   return (
-    <Button asChild size="icon" variant="outline" className="h-9 w-9 shrink-0">
+    <Button asChild size="icon" variant="outline" className={cn('h-9 w-9 shrink-0', className)}>
       <a
         href={externalHref(href)}
         target="_blank"
