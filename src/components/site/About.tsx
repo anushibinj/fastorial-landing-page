@@ -39,7 +39,7 @@ export function About() {
             </div>
             <div className="mt-8">
               <TextLink href={content.about.linkedIn} external>
-                Follow on LinkedIn
+                Connect with me on LinkedIn
               </TextLink>
             </div>
             <p className="mt-10 max-w-[50ch] text-[14px] leading-relaxed text-muted-foreground">
