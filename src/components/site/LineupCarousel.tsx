@@ -93,18 +93,20 @@ export function LineupCarousel({
 
       <div
         ref={scrollerRef}
-        className="mt-10 flex snap-x snap-mandatory items-stretch gap-5 overflow-x-auto overscroll-x-contain px-6 scrollbar-none md:mx-auto md:max-w-[980px] md:px-6"
+        className="mt-10 overflow-x-auto overscroll-x-contain scrollbar-none md:mx-auto md:max-w-[980px]"
         role="list"
         aria-label={label}
         tabIndex={0}
       >
-        {items.map((item) => (
-          <LineupCard
-            key={item.id}
-            item={item}
-            onOpenDetails={() => setSelected(item)}
-          />
-        ))}
+        <div className="flex w-max snap-x snap-mandatory items-stretch gap-5 px-6">
+          {items.map((item) => (
+            <LineupCard
+              key={item.id}
+              item={item}
+              onOpenDetails={() => setSelected(item)}
+            />
+          ))}
+        </div>
       </div>
 
       {items.length > 1 && (
