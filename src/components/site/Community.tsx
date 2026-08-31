@@ -41,8 +41,9 @@ export function Community() {
         </ul>
 
         <div className="mt-16">
-          <Button asChild className="bg-background text-foreground hover:bg-white/90">
+          <Button asChild className="bg-background text-foreground hover:bg-white/90 [&_svg]:size-[1em]">
             <a href={content.social.youtube} target="_blank" rel="noopener noreferrer">
+              <SocialBrandIcon name="YouTube" />
               Subscribe on YouTube
             </a>
           </Button>
