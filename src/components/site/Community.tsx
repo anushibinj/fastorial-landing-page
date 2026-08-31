@@ -1,9 +1,10 @@
 import { Button } from '@/components/ui/button';
+import { SocialBrandIcon, type SocialBrandName } from '@/components/site/SocialBrandIcon';
 import { TextLink } from '@/components/site/TextLink';
 import { content } from '@/lib/content';
 import { externalHref } from '@/lib/utils';
 
-const platforms = [
+const platforms: Array<{ name: SocialBrandName; href: string }> = [
   { name: 'YouTube', href: content.social.youtube },
   { name: 'Instagram', href: content.social.instagram },
   { name: 'Twitch', href: content.social.twitch },
@@ -27,7 +28,12 @@ export function Community() {
         <ul className="mx-auto mt-14 flex max-w-[640px] flex-wrap items-center justify-center gap-x-10 gap-y-5">
           {platforms.map((platform) => (
             <li key={platform.name}>
-              <TextLink href={externalHref(platform.href)} external className="text-[21px]">
+              <TextLink
+                href={externalHref(platform.href)}
+                external
+                className="gap-2 text-[21px]"
+              >
+                <SocialBrandIcon name={platform.name} />
                 {platform.name}
               </TextLink>
             </li>
@@ -35,8 +41,9 @@ export function Community() {
         </ul>
 
         <div className="mt-16">
-          <Button asChild className="bg-background text-foreground hover:bg-white/90">
+          <Button asChild className="bg-background text-foreground hover:bg-white/90 [&_svg]:size-[1em]">
             <a href={content.social.youtube} target="_blank" rel="noopener noreferrer">
+              <SocialBrandIcon name="YouTube" />
               Subscribe on YouTube
             </a>
           </Button>

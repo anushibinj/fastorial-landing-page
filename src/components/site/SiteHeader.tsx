@@ -9,6 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import { SocialBrandIcon } from '@/components/site/SocialBrandIcon';
 import { content } from '@/lib/content';
 
 const navItems = [
@@ -40,8 +41,9 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden justify-self-end md:block">
-          <Button variant="nav" size="nav" asChild>
+          <Button variant="nav" size="nav" asChild className="[&_svg]:size-[1em]">
             <a href={content.social.youtube} target="_blank" rel="noopener noreferrer">
+              <SocialBrandIcon name="YouTube" />
               YouTube
             </a>
           </Button>
@@ -76,10 +78,11 @@ export function SiteHeader() {
               ))}
               <Button
                 variant="ghost"
-                className="h-12 justify-start rounded-lg px-3 text-[28px] font-semibold tracking-[-0.02em] text-white hover:bg-white/10"
+                className="h-12 justify-start rounded-lg px-3 text-[28px] font-semibold tracking-[-0.02em] text-white hover:bg-white/10 [&_svg]:size-[1em]"
                 asChild
               >
                 <a href={content.social.youtube} target="_blank" rel="noopener noreferrer">
+                  <SocialBrandIcon name="YouTube" />
                   YouTube
                 </a>
               </Button>
