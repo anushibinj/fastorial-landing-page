@@ -15,7 +15,7 @@ import { content } from '@/lib/content';
 const navItems = [
   { label: 'Projects', id: 'projects' },
   { label: 'Courses', id: 'courses' },
-  { label: 'About', id: 'about' },
+  { label: 'About', id: 'anushibin' },
   { label: 'Community', id: 'community' },
 ];
 
